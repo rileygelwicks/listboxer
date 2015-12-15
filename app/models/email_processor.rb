@@ -15,13 +15,11 @@ class EmailProcessor
       post_create(list, @email)
     end
   end
-  
+
   def post_create(list,email)
-    email.raw_html.gsub!(/\r\n/,'').gsub!(/\t/, '')
-    email.raw_html.gsub!(/[\\"]/,'')
     list.posts.create!(
       subject: email.subject,
-      body: email.raw_html,
+      body: email.raw_html || email.body,
       from_email: email.from[:email],
       to_email: email.to.first[:email]
     )
