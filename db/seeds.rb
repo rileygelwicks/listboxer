@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+List.create({name: 'The Onion',
+             description: "The Onion is an American digital media company and news satire organization that publishes articles on international, national, and local news.",
+             website: "http://www.theonion.com/",
+             fromAddress:"TheOnionemail@theonion.com",
+             category: "Comedy"
+             })
