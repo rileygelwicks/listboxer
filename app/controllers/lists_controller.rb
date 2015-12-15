@@ -37,9 +37,9 @@ class ListsController < ApplicationController
 
   def destroy
     @list = List.find(params[:id])
-    @article.destroy
+    @list.destroy
 
-    redirect_to articles_path
+    redirect_to root
   end
 
   private
