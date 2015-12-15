@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root 'lists#index'
   mount_griddler
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :lists, :posts
+  resources :lists do
+    resources :posts
+  end
 
   # Example resource route with options:
   #   resources :products do

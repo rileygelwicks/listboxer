@@ -1,7 +1,6 @@
   <h3><%= link_to @list.name,@list.website%></h3>
   <p><%= @list.description %></p>
-  <% @list.posts.last(3).each do |post| %>
-    <%= post.subject %>
-    <%= post.body.html_safe %>
+  <% @list.posts.each do |post| %>
+    <%= link_to post.subject, list_post_path(@list.id, post.id) %>
     <br>
   <% end %>
