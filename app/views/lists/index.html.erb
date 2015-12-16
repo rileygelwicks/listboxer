@@ -1,5 +1,7 @@
 <% @lists.each do |list| %>
-  <h3><%= link_to list.name,list.website%></h3><br>
-  <h4><%= list.description %></h4>
-  <small><%= link_to "More", list_path(list)%></small>
+  <h3><%= link_to list.name,list_path(list)%></h3>
+  <h5>About:</h5>
+  <h5><%= list.description %></h5>
+  <small><%= link_to "Open Website", list.website%></small>
+  <button><%= link_to 'Edit', edit_list_path(list) %></button>
 <% end %>
