@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.all
+    @lists = List.all.where(spam: false)
   end
 
   def show
@@ -43,6 +43,6 @@ class ListsController < ApplicationController
 
   private
   def list_params
-    params.require(:list).permit(:name, :description, :website, :fromAddress, :category)
+    params.require(:list).permit(:spam, :name, :description, :website, :fromAddress, :category)
   end
 end

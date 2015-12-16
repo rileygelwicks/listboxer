@@ -30,9 +30,13 @@
     <%= f.label :website %><br>
     <%= f.text_area :website %>
   </p>
+
+  <%= f.label :spam %>
+  <%= f.radio_button :spam, true %>True
+  <%= f.radio_button :spam, false %>False
   <p>
     <%= f.submit %>
   </p>
   <p>
-    <button><%=link_to "Back", root_path%> </button> 
+    <button><%=link_to "Back", root_path%> </button>
 <% end %>
