@@ -10,6 +10,8 @@ class EmailProcessor
     else
       List.create!(
         fromAddress: @email.from[:email],
+        website: "http://#{@email.from[:host]}",
+        name: @email.from[:name]
       )
       list = List.find_by fromAddress:(@email.from[:email])
       post_create(list, @email)
