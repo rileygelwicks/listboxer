@@ -1,14 +1,30 @@
-<% @lists.each do |list| %>
-  <h3><%= link_to list.name,list_path(list)%></h3>
-  <h5><%= list.description %></h5>
-  <p>The latest posts:</p>
-  <% list.posts.each do |post| %>
-    <%= link_to post.subject, list_post_path(list, post)%>
-    <%= link_to 'Delete', list_post_path(list, post),method: :delete%>
-    <br>
-  <%end%>
-  <br>
-  <small><%= link_to "Open Website", list.website%></small>
-  <button><%= link_to 'Edit', edit_list_path(list) %></button>
-  <button><%= link_to 'Delete List', list_path(list), method: :delete %></button>
-<% end %>
+<div class="container">
+  <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+      <% @lists.each do |list| %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= link_to list.name,list_path(list)%><%= link_to "open_in_browser", list.website, class: "material-icons pull-right"%></h3>
+        </div>
+        <div class="panel-body">
+          <p class="panel-info text-info"><em><%= list.description %></em></p>
+          <hr>
+          <% list.posts.each do |post| %>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p><%= link_to post.subject, list_post_path(list, post), class: "text-muted"%><%= link_to 'Delete Post', list_post_path(list, post),method: :delete, class: "btn btn-xs btn-danger pull-right"%></p>
+
+            </div>
+          </div>
+          <%end%>
+          <div class="btn-group btn-group-sm">
+
+            <%= link_to 'edit', edit_list_path(list), class: "material-icons" %>
+            <%= link_to 'delete', list_path(list), method: :delete, class: "material-icons" %>
+          </div> <!-- button group-->
+        </div>
+      </div><!-- panel panel-primary-->
+      <% end %>
+    </div><!-- col-sm-10 col-sm-offset-2-->
+  </div>
+</div>
