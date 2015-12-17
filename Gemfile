@@ -36,6 +36,10 @@ gem 'griddler-postmark'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#heroku rails twelve factor
+gem 'rails_12factor', group: :production
+
+#adds bower components
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-bootstrap-material-design'
