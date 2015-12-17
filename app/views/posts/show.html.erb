@@ -1,4 +1,10 @@
-<h2><%= @list.name %></h2>
-<h3> <small><%= @post.subject %></small></h3>
-<h5><%= @post.from_email %></h5>
-<%= @post.body.html_safe %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"><h2><%= @post.subject.first(60) %></h2></h1>
+    <%= link_to @list.name, list_path(@list) %>
+  </div>
+  <div class="panel-body">
+    <h3 class="panel-info"> </h3>
+    <%= @post.body.html_safe %>
+  </div>
+</div>
