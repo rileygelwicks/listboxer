@@ -1,6 +1,15 @@
-  <h3><%= link_to @list.name,@list.website%></h3>
-  <p><%= @list.description %></p>
-  <% @list.posts.each do |post| %>
-    <%= link_to post.subject, list_post_path(@list.id, post.id) %>
-    <br>
-  <% end %>
+<div class="row">
+<div class="col-xs-12">
+  <div class="jumbotron">
+    <h2><%= link_to @list.name,@list.website%></h2>
+    <%= @list.description %>
+  </div>
+</div>
+  <div class="col-xs-10 col-xs-offset-1">
+    <% @list.posts.each do |post| %>
+      <div class="well well-lg">
+        <%= link_to post.subject, list_post_path(@list.id, post.id) %>
+      </div>
+    <% end %>
+  </div>
+</div>
