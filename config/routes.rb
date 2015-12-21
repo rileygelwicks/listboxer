@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'lists#index'
   mount_griddler
+  get 'about', to: 'welcome#about'
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :lists do
     resources :comments
