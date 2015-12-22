@@ -36,6 +36,8 @@ gem 'griddler-postmark'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'font-awesome-sass'
+
 #heroku rails twelve factor
 gem 'rails_12factor', group: :production
 
