@@ -11,10 +11,12 @@ It was created in about a week as a final project for [General Assembly's](http:
 
 ## How to install?
 **Requirements**
+
 1. Create account on Postmark
 1. Download install and run [PostgreSQL](https://www.postgresql.org)
 
 **Install Process**
+
 1. `$ git clone https://github.com/rileygelwicks/listboxer.git`
 1. `$ cd listreader/`
 3. `$ bundle install`
