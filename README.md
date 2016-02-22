@@ -29,4 +29,4 @@ It was created in about a week as a final project for [General Assembly's](http:
 * Heroku for hosting.
 
 ## License
-MIT
+[MIT](/LICENSE.txt)
