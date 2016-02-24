@@ -40,6 +40,7 @@ gem 'font-awesome-sass'
 
 #heroku rails twelve factor
 gem 'rails_12factor', group: :production
+gem 'puma', group: :production
 
 #adds bower components
 source 'https://rails-assets.org' do
