@@ -1,41 +1,45 @@
 <div class="row">
   <div class="col-xs-12">
-    <div class="jumbotron">
-      <h2><%= link_to @list.name,@list.website%></h2>
-      <%= @list.description %>
-    </div>
-  </div>
-  <div class="col-xs-10 col-xs-offset-1">
-    <% @list.posts.each do |post| %>
-    <div class="well well-lg">
-      <%= link_to post.subject, list_post_path(@list.id, post.id) %>
-    </div>
-    <% end %>
-    <h3>Comments</h3>
-    <div class="list-group">
-      <% @list.comments.each do |comment| %>
-      <div class="list-group-item">
-        <div class="row-content">
-          <h4 class="list-group-item-heading"><%=comment.author%></h4>
-          <p class="list-group-item-text"><%=comment.body%></p>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2><%= link_to @list.name,@list.website%></h2>
+        <%= @list.description %>
+      </div>
+      <div class="panel-body">
+        <% @list.posts.each do |post| %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p><%= link_to post.subject, list_post_path(@list, post), class: "text-muted"%><%= link_to 'Delete Post', list_post_path(@list, post),method: :delete, class: "btn btn-xs btn-danger pull-right"%></p>
+            <em><small>Created <%= post.created_at.strftime('%B %d, %Y') %></small></em>      </div>
+          </div>
+          <% end %>
         </div>
       </div>
-      <div class="list-group-separator"></div>
-      <%end%>
-    </div>
-    <h3>Add a comment:</h3>
-    <div class="form-horizontal">
-      <%= form_for([@list, @list.comments.build]) do |f| %>
-      <div class="form-group">
-        <%= f.label :author, class:"control-label" %>
-        <%= f.text_field :author, class:"form-control" %>
+      <h3>Comments</h3>
+      <div class="list-group">
+        <% @list.comments.each do |comment| %>
+        <div class="list-group-item">
+          <div class="row-content">
+            <h4 class="list-group-item-heading"><%=comment.author%></h4>
+            <p class="list-group-item-text"><%=comment.body%></p>
+          </div>
+        </div>
+        <div class="list-group-separator"></div>
+        <%end%>
       </div>
-      <div class="form-group">
-        <%= f.label :body, class:"control-label" %>
-        <%= f.text_area :body, class:"form-control" %>
+      <h3>Add a comment:</h3>
+      <div class="form-horizontal">
+        <%= form_for([@list, @list.comments.build]) do |f| %>
+        <div class="form-group">
+          <%= f.label :author, class:"control-label" %>
+          <%= f.text_field :author, class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :body, class:"control-label" %>
+          <%= f.text_area :body, class:"form-control" %>
+        </div>
+        <%= f.submit class:"btn btn-raised btn-danger"%>
+        <% end %>
       </div>
-      <%= f.submit class:"btn btn-raised btn-danger"%>
-      <% end %>
     </div>
   </div>
-</div>
