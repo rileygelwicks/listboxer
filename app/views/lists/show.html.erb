@@ -6,7 +6,8 @@
         <%= @list.description %>
       </div>
       <div class="panel-body">
-        <% @list.posts.each do |post| %>
+        <h5>Latests Posts:</h5>
+        <% @list.posts.reverse_order.each do |post| %>
         <div class="panel panel-default">
           <div class="panel-body">
             <p><%= link_to post.subject, list_post_path(@list, post), class: "text-muted"%><%= link_to 'Delete Post', list_post_path(@list, post),method: :delete, class: "btn btn-xs btn-danger pull-right"%></p>
@@ -15,7 +16,7 @@
           <% end %>
         </div>
       </div>
-      <h3>Comments</h3>
+      <h4>Comments</h4>
       <div class="list-group">
         <% @list.comments.each do |comment| %>
         <div class="list-group-item">
@@ -27,7 +28,7 @@
         <div class="list-group-separator"></div>
         <%end%>
       </div>
-      <h3>Add a comment:</h3>
+      <h4>Add a comment:</h4>
       <div class="form-horizontal">
         <%= form_for([@list, @list.comments.build]) do |f| %>
         <div class="form-group">
