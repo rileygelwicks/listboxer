@@ -13,6 +13,7 @@ It was created in about a week as a final project for [General Assembly's](http:
 **Requirements**
 
 1. Create account on Postmark
+1. Setup an inbound email address and point it at your server. Using a service like [ngrok](http://ngrok.com) is quite useful in this situation.
 1. Download install and run [PostgreSQL](https://www.postgresql.org)
 
 **Install Process**
