@@ -1,10 +1,10 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.all.where(spam: false)
+    @lists = List.includes(:posts).where(spam: false)
   end
 
   def show
-    @list = List.find(params[:id])
+    @list = List.includes(:posts).find(params[:id])
   end
 
   def new
