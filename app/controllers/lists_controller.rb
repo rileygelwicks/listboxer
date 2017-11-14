@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.includes(:posts).where(spam: false)
+    @lists = List.where(spam: false)
   end
 
   def show
