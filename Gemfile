@@ -37,6 +37,7 @@ gem 'griddler-postmark'
 # gem 'capistrano-rails', group: :development
 
 gem 'font-awesome-sass'
+gem 'will_paginate'
 
 #heroku rails twelve factor
 gem 'rails_12factor', group: :production

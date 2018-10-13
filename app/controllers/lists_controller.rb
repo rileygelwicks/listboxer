@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.where(spam: false)
+    @lists = List.where(spam: false).paginate(page: params[:page])
   end
 
   def show
