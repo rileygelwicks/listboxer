@@ -30,14 +30,12 @@ gem 'griddler-postmark'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 gem 'font-awesome-sass'
 gem 'will_paginate'
+gem 'administrate'
 
 #heroku rails twelve factor
 gem 'rails_12factor', group: :production

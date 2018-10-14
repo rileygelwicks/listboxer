@@ -1,4 +1,4 @@
 class Post < ActiveRecord::Base
-  belongs_to :lists
+  belongs_to :list
   has_many :comments
 end
