@@ -1,0 +1,6 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p><%= link_to post.subject, list_post_path(list, post), class: "text-muted"%></p>
+    <em><small>Created <%= post.created_at.strftime('%B %d, %Y') %></small></em>
+  </div>
+</div>

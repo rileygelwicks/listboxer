@@ -8,12 +8,8 @@
       <div class="panel-body">
         <h5>Latests Posts:</h5>
         <% @list.posts.reverse_order.each do |post| %>
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p><%= link_to post.subject, list_post_path(@list, post), class: "text-muted"%><%= link_to 'Delete Post', list_post_path(@list, post),method: :delete, class: "btn btn-xs btn-danger pull-right"%></p>
-            <em><small>Created <%= post.created_at.strftime('%B %d, %Y') %></small></em>      </div>
-          </div>
-          <% end %>
+          <%= render partial: 'post', locals: {post: post, list: @list} %>
+        <% end %>
         </div>
       </div>
       <h4>Comments</h4>
