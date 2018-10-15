@@ -11,7 +11,8 @@ class EmailProcessor
       List.create!(
         fromAddress: @email.from[:email],
         website: "http://#{@email.from[:host]}",
-        name: @email.from[:name]
+        name: @email.from[:name],
+        spam: true
       )
       list = List.find_by fromAddress:(@email.from[:email])
       post_create(list, @email)
