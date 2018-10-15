@@ -7,12 +7,12 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_admin
-
+    
     def authenticate_admin
-      http_basic_authenticate_with(
+      ApplicationController.http_basic_authenticate_with(
         name: ENV.fetch("ADMIN_NAME"),
         password: ENV.fetch("ADMIN_PASSWORD")
-      ) unless Rails.env == 'test' || 'development'
+      ) unless Rails.env == 'development'
     end
 
     # Override this value to specify the number of elements to display at a time
